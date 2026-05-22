@@ -45,6 +45,44 @@ In a functional program we cannot modify a variable after it has been initialize
 - It avoids repeated code: because functions are only used when necessary, it avoids using useless code.
 
 
+## Models
+As we have talked before. Functional Paradigm is based on functions. In order to get the solution of the problem I created different functions that would help us. In order t better understand this problem, the inputs were managed thrugh lists. As this is how you can move recursively in the function.
 
+The first functions eliminates any duplicate of any letter, meaning that a letter is chosen and compared with the rest of the list. The base case is when the list is completely empty and if a letter is repeated it is only added to the final list once. By doing this we are clearing the list so that we can avoid any copy letter.
+
+```Racket
+;;Function 1
+;; We define a function that eliminates duplicates
+(define (fun-elim-dup my_list final_list)
+  (cond
+    ;;caso base
+    ;;llegamos al caso base
+    ;;1. cuando la lista esta vacia
+    [(empty? my_list) final_list]
+    ;;2. cuando a la lista le queda un caracter
+     [(member (first my_list) final_list)
+     (fun-elim-dup (rest my_list) final_list)]
+    [else
+     (fun-elim-dup (rest my_list) (cons (first my_list) final_list))]))
+```
+For the second function, we create
+
+```Racket
+(define (length-list my_list contador)
+  (cond
+    [(empty? my_list) contador]
+    [else (length-list (rest my_list) (+ contador 1))]))
+```
+
+## Tests
+
+## Analysis
+### Complexity
+
+### Another Paradigm
+
+### Other Solution
+
+### Reference
 
 
