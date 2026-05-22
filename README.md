@@ -6,6 +6,7 @@ The problem 236 A. Boy or Girl, is a Code Forces problem. The problem is about a
 Based on this, the platform has given mi a series of outputs and inputs that I should consider in order to help him, diffirenciate between female and male.
 
 ![examples](codeForces.png)
+Link to the problem: https://codeforces.com/problemset/problem/236/A
 
 ## Understanding the problem
 In order to help our character, we need to understand that it is based in only the distinct characters. Meaning, that if a character repeats itself, then it is only count as one. For example in the string "wjmzbmr", m is repeated twice so it is only modeled as one.
