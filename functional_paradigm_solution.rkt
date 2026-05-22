@@ -1,6 +1,7 @@
 #lang racket
 
 ;;We define the list of characters
+;; Woman users (CHAT WITH HER!)
 (define my_list_1  '(a b c d))                   ; 4 únicos: a b c d
 (define my_list_2  '(r a c k e t))               ; 6 únicos: r a c k e t
 (define my_list_3  '(h e l l o))                 ; 4 únicos: h e l o
@@ -15,7 +16,7 @@
 (define my_list_12 '(a b c d e f g h))           ; 8 únicos: a b c d e f g h
 (define my_list_13 '(a a b b c c d d e e f f))   ; 6 únicos: a b c d e f
 
-;; Ignore him solution
+;; Male. Ignore him solution
 (define my_list_14 '(s w i f t))                 ; 5 únicos: s w i f t
 (define my_list_15 '(x i a o d a o))             ; 5 únicos: x i a o d
 (define my_list_16 '(a b c))                     ; 3 únicos: a b c

@@ -65,7 +65,7 @@ The first functions eliminates any duplicate of any letter, meaning that a lette
     [else
      (fun-elim-dup (rest my_list) (cons (first my_list) final_list))]))
 ```
-For the second function, we create
+For the second function, we define a function where we can get the length of a list, so a counter is used in order to get the final length of the list.
 
 ```Racket
 (define (length-list my_list contador)
@@ -74,15 +74,70 @@ For the second function, we create
     [else (length-list (rest my_list) (+ contador 1))]))
 ```
 
+Finally, we have our Lambda function that is the one that tells us if it is a girl or a boy behind the username. As we can see other functions are called here in order to get the solution
+
+```Racket
+;;Lambda
+;;We use lambda to define if it is a Girl or a Boy
+(define boy-or-girl
+  (lambda (s)
+    (if (even? (length-list (fun-elim-dup s '()) 0))
+        "CHAT WITH HER!"
+        "IGNORE HIM!")))
+```
+
+Throughout the different functions recursion is implemented so that we can get through the list that it is given
+
 ## Tests
 
+For the tests, the first sentences should give encourage you to chat with thi girls:
+
+```Racket
+;; Woman users (CHAT WITH HER!)
+(define my_list_1  '(a b c d))                   ; 4 únicos: a b c d
+(define my_list_2  '(r a c k e t))               ; 6 únicos: r a c k e t
+(define my_list_3  '(h e l l o))                 ; 4 únicos: h e l o
+(define my_list_4  '(m o n k e y))               ; 6 únicos: m o n k e y
+(define my_list_5  '(s e v e n k p l u s))       ; 8 únicos: s e v n k p l u
+(define my_list_6  '(a a b b c c d d))           ; 4 únicos: a b c d
+(define my_list_7  '(p y t h o n))               ; 6 únicos: p y t h o n
+(define my_list_8  '(r u b y))                   ; 4 únicos: r u b y
+(define my_list_9  '(e r l a n g))               ; 6 únicos: e r l a n g
+(define my_list_10 '(h a s k e l l))             ; 6 únicos: h a s k e l
+(define my_list_11 '(k o t l i n))               ; 6 únicos: k o t l i n
+(define my_list_12 '(a b c d e f g h))           ; 8 únicos: a b c d e f g h
+(define my_list_13 '(a a b b c c d d e e f f))   ; 6 únicos: a b c d e f
+```
+
+Meanwhile, the male usernames or Ignore him result are as follow: 
+
+```Racket
+;; Male. Ignore him solution
+(define my_list_14 '(s w i f t))                 ; 5 únicos: s w i f t
+(define my_list_15 '(x i a o d a o))             ; 5 únicos: x i a o d
+(define my_list_16 '(a b c))                     ; 3 únicos: a b c
+(define my_list_17 '(p r o l o g))               ; 5 únicos: p r o l g
+(define my_list_18 '(z z z z z))                 ; 1 único:  z
+(define my_list_19 '(a a b b c))                 ; 3 únicos: a b c
+(define my_list_20 '(s c h e m e))               ; 5 únicos: s c h e m
+(define my_list_21 '(c l o j u r e))             ; 7 únicos: c l o j u r e
+(define my_list_22 '(a b c d e))                 ; 5 únicos: a b c d e
+(define my_list_23 '(a a b b c c d d e))         ; 5 únicos: a b c d e
+(define my_list_24 '(j a v a s c r i p t))       ; 9 únicos: j a v s c r i p t
+(define my_list_25 '(g o l a n g))               ; 5 únicos: g o l a n
+```
+This tests are also found in Racket code.
 ## Analysis
 ### Complexity
+The program has a complexity of O(n), because we use functions in functions but that is less expensive than usng while and for cycles. Also, the list is only traveled through once. 
 
 ### Another Paradigm
+Another paradigm implemented s the logical one, using Prolog. In here it is implemented similarly as in racket except that a path is more clearly seen here.
 
 ### Other Solution
+As told before the other solution is using logical paradigm, with prolog and eventhough the racket solution is better. Prolog it's not a bad idea to be used to solve the problem.
 
 ### Reference
+http://theswissbay.ch/pdf/Gentoomen%20Library/Programming/Functional%20Programming/Functional%20Programming%20For%20The%20Real%20World.pdf
 
 
