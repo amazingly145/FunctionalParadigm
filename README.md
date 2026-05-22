@@ -17,6 +17,9 @@ w j m z b m r -> w j m z b r
 
 Having ths logical part of the solution of the problem and undrstanding that no characters can repeat itself, we can now choose a paradigm to solve the problem. In this case, I chose functional as my principal paradigm and logical paradigm as my secondary. But first we need to understand some important knowledge about it. 
 
+## Curiosity
+I chose this problem, because I thought it would be interesting to understand how to use the lambda calculus combining the strings. The complexity of the code is on making the list of the string unique. That is why I chose this problem.
+
 # Functional Paradigm
 ## Context
 A functional paradigm is the one that encourages program development to be used purely using functions and mathematical processes. To understand functional paradigm we need to talk about Lambda calculus, it was developed by Alonso Church, it gives us a theorical model that describe functions and their evaluations.
@@ -41,8 +44,6 @@ In a functional program we cannot modify a variable after it has been initialize
 - Testing and debugging is easier: beacause functions take only aguments and produce an output.
 - It avoids repeated code: because functions are only used when necessary, it avoids using useless code.
 
-
-### Recursion
 
 
 
