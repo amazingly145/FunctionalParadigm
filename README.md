@@ -45,6 +45,11 @@ In a functional program we cannot modify a variable after it has been initialize
 - Testing and debugging is easier: beacause functions take only aguments and produce an output.
 - It avoids repeated code: because functions are only used when necessary, it avoids using useless code.
 
+## The model diagram
+For the visual implementation of how my code works, I did a diagram explaining how was the thought process of my code:
+![diagrama](diagrama.png)
+
+In this diagram you a see how the functions process the information so that we can get to our final result.
 
 ## Models
 As we have talked before. Functional Paradigm is based on functions. In order to get the solution of the problem I created different functions that would help us. In order t better understand this problem, the inputs were managed thrugh lists. As this is how you can move recursively in the function.
@@ -129,11 +134,14 @@ Meanwhile, the male usernames or Ignore him result are as follow:
 ```
 This tests are also found in Racket code.
 ## Analysis
-### Complexity
-The program has a complexity of O(n), because we use functions in functions but that is less expensive than usng while and for cycles. Also, the list is only traveled through once. 
+### Time Complexity
+The program has a complexity of O(n^2), this is due to when you call the function that eliminates duplicates. Processing each of the elements but for every element member is calles. Making the functon a two operation part, so this makes the complexity of the problem O(n^2)
 
 ### Another Paradigm
-Another paradigm implemented s the logical one, using Prolog. In here it is implemented similarly as in racket except that a path is more clearly seen here.
+Another paradigm implemented is the logical one, using Prolog. In here it is implemented similarly as in racket except that a path is more clearly seen here. Some of the reasons why the functional paradigm is better than logical paradigm in this case:
+- Clarity of intent: In racket, the solution comes like a series of steps: eliminate duplicates, count and check list. In Prolog this is implemented as logical clauses and relies in unification, but this makes the solution more complex than needed
+- Determinism: Prorlog's solution is based on goal solution and can explore multiple paths. But in this case there is only one solution per problem or input. Rcket's purely functionality makes it very straight forward and single response.
+- No side effects: the Prolog's solution requires a negation "/+" which makes the solution prooedual when it is purely semantic. Raacket's member and cond makes it cleaner.
 
 ### Other Solution
 As told before the other solution is using logical paradigm, with prolog and eventhough the racket solution is better. Prolog it's not a bad idea to be used to solve the problem.
